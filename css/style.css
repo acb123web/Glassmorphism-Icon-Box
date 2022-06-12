@@ -1,0 +1,108 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:95vh;
+    min-height:400px;
+    background-color: #fbfbfb;
+}
+body .block-container{
+    position: relative;
+    width:120px;
+    height:120px;
+    margin:32px;
+    transition:250ms;
+    perspective: 500px;
+}
+body .block-container .btn-back{
+    position: absolute;
+    inset:0;
+    z-index:-1;
+    width:inherit;
+    height:inherit;
+    border-radius:32px;
+    transition:250ms;
+    transform-style: preserve-3d;
+    transform-origin: bottom right;
+    transform:rotateZ(8deg);
+    will-change:transform;
+    box-shadow:16px 0 40px #e4e4e4;
+}
+body .block-container .btn-back-1{
+    background: linear-gradient(135deg, #eb469f -20%, #ff0170 120%);
+}
+body .block-container .btn-back-2{
+    background: linear-gradient(135deg, #5c46eb -20%, #013fff 120%);
+}
+body .block-container .btn-back-3{
+    background: linear-gradient(135deg, #4aeb46 -20%, #01ff22 120%);
+}
+body .block-container .btn-front{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    width:inherit;
+    height:inherit;
+    border-radius:32px;
+    background-color: #fff 33;
+    backdrop-filter: blur(20px);
+    transition:250ms;
+    transform-style:preserve-3d;
+    transform-origin: top left;
+    overflow:hidden;
+}
+body .block-container .btn-front svg.frame{
+    width:inherit;
+    height:inherit;
+}
+body .block-container .btn-front svg.frame rect{
+    width:inherit;
+    height:inherit;
+    fill:none;
+    stroke-width: 4;
+}
+body .block-container .btn-front svg.icon{
+    position:absolute;
+    inset:50% 0 0 50%;
+    transform:translate(-50%, -50%);
+}
+body .block-container:hover>.btn-back{
+    transform:translateZ(20px) rotateZ(20deg) rotateX(-20deg) rotateY(-20deg);
+}
+body .block-container:hover>.btn-front{
+    transform:translateZ(80px) rotateZ(-5deg) rotateX(15deg) rotateY(15deg);
+}
+body .block-container:hover>.popover{
+    display:block;
+}
+.popover{
+    position:absolute;
+    bottom:0px;
+    text-align: center;
+    margin:auto;
+    align-items: center;
+    justify-content: center;
+    transform:translateY(50px);
+    right:10%;
+    display:none;
+}
+.popover button{
+    padding:9px 22px;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-size:14px;
+    font-weight:bold;
+    border-radius:10px;
+    letter-spacing: 1px;
+    box-shadow:rgba(0,0,0,0.15) 0px 15px 25px,rgba(0,0,0,0.05) 0px 5px 10px;
+}
+.popover button.pop1{
+    background: linear-gradient(135deg, #eb469f -20%, #ff0170 120%);
+}
+.popover button.pop2{
+    background: linear-gradient(135deg, #5c46eb -20%, #013fff 120%);
+}
+.popover button.pop3{
+    background: linear-gradient(135deg, #4aeb46 -20%, #01ff22 120%);
+}
